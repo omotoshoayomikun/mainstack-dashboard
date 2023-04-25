@@ -62,10 +62,10 @@ function Dashboard() {
 
                 <div className="flex gap-4">
                     <div className="basis-full">
-                        <Card {...datas.top_locations} title='Top Locations' />
+                        <Card {...datas.top_locations} title='Top Locations' color={colors} />
                     </div>
                     <div className="basis-full flex relative">
-                        <Card {...datas.top_sources} title='Top Referral source' />
+                        <Card {...datas.top_sources} title='Top Referral source' color={colors} />
                     </div>
                 </div>
             </div>

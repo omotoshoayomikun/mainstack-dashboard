@@ -4,8 +4,7 @@ import DoughnutChart from './DoughnutChart'
 
 export const Card = (props) => {
 
-    const { title,...detials } = props;
-
+    const { title, color, ...detials } = props;
 
     return (
         <>
@@ -14,34 +13,36 @@ export const Card = (props) => {
                     <h1 className="text-lg font-bold">{title}</h1>
                     <Btn1 title='View full reports' />
                 </div>
-                <div className="flex justify-between">
-                    <div className="">
-                        {
-                            detials && (
-                                Object.values(detials).map((detail, i) => (
-                                    <div key={i} className="flex items-center mb-[15px]">
-                                        <div className='mr-2 w-5 h-5 items-center justify-center flex'>
-                                            <img src={detail.country ? `/imgs/${detail.country.split(' ').shift()}.svg` : `/imgs/${detail.source.split(' ').shift()}.svg`} alt=" svg" />
+                {
+                    Object.values(detials).length !== 0 && (
+                        <div className="flex justify-between">
+                            <div className="">
+                                {
+                                    Object.values(detials).map((detail, i) => (
+                                        <div key={i} className="flex items-center mb-[15px]">
+                                            <div className='mr-2 w-5 h-5 items-center justify-center flex'>
+                                                <img src={detail.country ? `/imgs/${detail.country.split(' ').shift()}.svg` : `/imgs/${detail.source.split(' ').shift()}.svg`} alt=" svg" />
+                                            </div>
+                                            <span className='mr-2 text-base'>{detail.country || detail.source}</span>
+                                            <span className='mr-3 text-base'>{detail.percent} %</span>
+                                            <span className={`w-3 h-3 rounded-[50%]`} style={{ backgroundColor: color[i] }}></span>
                                         </div>
-                                        <span className='mr-2 text-base'>{detail.country || detail.source}</span>
-                                        <span className='mr-3 text-base'>{detail.percent} %</span>
-                                        <span className="w-3 h-3 rounded-[50%] bg-red-700"></span>
-                                    </div>
-                                ))
-                            )
-                        }
-                    <div className="flex items-center">
-                        <div className="mr-2 w-5 h-5"></div>
-                        <span className='mr-2 text-base'>Others</span>
-                        <span className='mr-3 text-base'>25 %</span>
-                        <span className="w-3 h-3 rounded-[50%] bg-[#F09468]"></span>
-                    </div>
-                    </div>
-                    {
-                       Object.values(detials).length !== 0 && <DoughnutChart {...detials} />
-                    }
-                    
-                </div>
+                                    ))
+                                }
+                                <div className="flex items-center">
+                                    <div className="mr-2 w-5 h-5"></div>
+                                    <span className='mr-2 text-base'>Others</span>
+                                    <span className='mr-3 text-base'>25 %</span>
+                                    <span className="w-3 h-3 rounded-[50%] bg-[#F09468]"></span>
+                                </div>
+                            </div>
+                            {
+                                Object.values(detials).length !== 0 && <DoughnutChart {...detials} />
+                            }
+
+                        </div>
+                    )
+                }
             </div>
         </>
     )

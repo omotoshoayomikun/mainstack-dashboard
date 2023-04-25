@@ -16,7 +16,8 @@ function DoughnutChart(props) {
 
     const [chartData, setChartData] = useState({
         datasets: [{
-            data: Object.values(datas).map(data => data.percent)
+            data: Object.values(datas).map(data => data.percent),
+            backgroundColor: ['#599EEA', '#844FF6', '#0FB77A', '#FAB70A', '#FF5403']
         }]
     })
 

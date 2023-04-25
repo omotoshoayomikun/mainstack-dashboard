@@ -76,8 +76,10 @@ function LineChart() {
 
     return (
         <>
-            <div className="">
-                <Line data={lineChart} options={options} height='510px' />
+            <div className="pb-6 relative h-[370px] w-full">
+                <div className="absolute w-full h-full">
+                <Line data={lineChart} options={options} />
+                </div>
             </div>
         </>
     )

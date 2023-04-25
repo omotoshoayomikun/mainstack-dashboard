@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: sohne-regular;
+  src: url('./Fonts/Söhne-Font-Family-Collection/Test_Söhne/TestSöhne-Buch.otf');
+}
+
+@font-face {
+  font-family: sohne-extra;
+  src: url('./Fonts/Söhne-Font-Family-Collection/Test_Söhne/TestSöhne-Leicht.otf');
+}
+
+@layer base {
+  html {
+    font-family: sohne-regular;
+  }
+}
+
+:root {
+
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.my-list {
+  fill: #4D5760;
+  color: #4D5760;
+  transition: all 0.5s ;
+}
+/* 
+.my-list.my-active {
+  padding-left: 62px;
+  fill: #FF5403;
+  color: #FF5403;
+} */
+
+.my-list::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  left: 0;
+  top: 0;
+  height: 28px;
+  transition: all 1s ;
+}
+
+.my-list:hover {
+  padding-left: 62px;
+  fill: #FF5403;
+  color: #FF5403;
+}
+
+.my-list:hover.my-list::before {
+  background: #FF5403;
+  border-radius: 3px;
+}

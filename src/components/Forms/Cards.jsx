@@ -1,5 +1,4 @@
 import React from 'react'
-import img from '../../assets/icons/Ghana.svg'
 import { Btn1 } from './Buttons'
 import DoughnutChart from './DoughnutChart'
 
@@ -21,7 +20,7 @@ export const Card = (props) => {
                                 Object.values(detials).map((detail, i) => (
                                     <div key={i} className="flex items-center mb-[15px]">
                                         <div className='mr-2 w-5 h-5 items-center justify-center flex'>
-                                            <img src={detail.country ? `src/assets/icons/${detail.country.split(' ').shift()}.svg` : `src/assets/icons/${detail.source.split(' ').shift()}.svg`} alt=" svg" />
+                                            <img src={detail.country ? `/imgs/${detail.country.split(' ').shift()}.svg` : `/imgs/${detail.source.split(' ').shift()}.svg`} alt=" svg" />
                                         </div>
                                         <span className='mr-2 text-base'>{detail.country || detail.source}</span>
                                         <span className='mr-3 text-base'>{detail.percent} %</span>

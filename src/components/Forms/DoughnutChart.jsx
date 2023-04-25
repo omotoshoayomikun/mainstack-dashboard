@@ -7,7 +7,7 @@ function DoughnutChart(props) {
     const { ...datas } = props
 
     const [chartData, setChartData] = useState({
-        labels: [],
+        // labels: [],
         datasets: [{
             data: [],
         }],
@@ -16,7 +16,7 @@ function DoughnutChart(props) {
     useEffect(() => {
         async function data() {
             setChartData({
-                   labels: Object.values(datas).map((data) => data.country),
+                //    labels: Object.values(datas).map((data) => data.country),
                 datasets: [{
                     data: Object.values(datas).map((data) => data.percent),
                     backgroundColor: ['#599EEA', '#844FF6', '#0FB77A', '#FAB70A', '#FF5403']

@@ -6,6 +6,7 @@ export const Card = (props) => {
 
     const { title,...detials } = props;
 
+
     return (
         <>
             <div className="w-full p-6 border border-my-grey rounded-xl h-[340px]">
@@ -36,7 +37,10 @@ export const Card = (props) => {
                         <span className="w-3 h-3 rounded-[50%] bg-[#F09468]"></span>
                     </div>
                     </div>
-                    <DoughnutChart {...detials} />
+                    {
+                       Object.values(detials).length !== 0 && <DoughnutChart {...detials} />
+                    }
+                    
                 </div>
             </div>
         </>

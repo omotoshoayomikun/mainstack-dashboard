@@ -8,19 +8,33 @@ import { ReactComponent as InfoIcon } from '../assets/icons/info.svg';
 function Dashboard() {
 
     const [datas, setDatas] = useState([])
+    const [totalPage, setTotalPage] = useState()
+
+    console.log(datas.graph_data)
+
     const colors = ['#599EEA', '#844FF6', '#0FB77A', '#FAB70A', '#FF5403'];
+    let z = 0;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await axios.get('https://fe-task-api.mainstack.io/')
-                setDatas(data.data)
+                const revData = data.data
+                setDatas(revData)
+
+                // const pageData = Object.values(revData['graph_data']['views'])
+                // for(let i = 0; i < pageData.length; i++) {
+                //     setTotalPage(totalPage => totalPage + pageData[i])
+                // }
             } catch (error) {
                 console.log(error)
             }
         }
         fetchData()
     }, [])
+
+
+    console.log(totalPage)
 
     return (
         <>
@@ -55,7 +69,12 @@ function Dashboard() {
                         </div>
                     </div>
                     <p className='text-sm text-my-text-color mb-6'>All time</p>
-                    <h1 className="text-5xl font-extrabold mb-[20px]">500</h1>
+                    <h1 className="text-5xl font-extrabold mb-[20px]">
+                        {
+                            datas.graph_data ? Object.values(datas.graph_data.views).reduce((a, b) => {return a + b})
+                                : 0
+                        }
+                    </h1>
 
                     <LineChart />
                 </div>

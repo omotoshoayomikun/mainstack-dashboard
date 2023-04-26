@@ -17,12 +17,15 @@ function LineChart() {
             data: [],
             borderColor: '#FF5403',
             pointBorderColor: 'transparent',
-            pointBorderWidth: 4,
-            tension: 0.2
+            // pointBorderWidth: 1,
+            // tension: 0.2,
+            // spanGaps: 3,
         }]
     })
 
     const options = {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: false
         },
@@ -35,16 +38,28 @@ function LineChart() {
 
             y: {
                 max: 120,
-                min: 0
+                min: 0,
+
+                border: {
+                    dash: [10, 4],
+                },
             },
+
+            // grid: {
+            //     borderDash: [10, 5],
+            //     axis: 'y'
+            // }
+
             // ticks: {
             //     stepSize: 2,
             //     callback: (value) => value + 'K'
             // },
-            // grid: {
-            //     borderDash: [10]
-            // }
-        }
+            //  
+        },
+
+        yAxes: [{
+            borderDash: [8, 4],
+        }]
     }
 
     useEffect(() => {
@@ -78,7 +93,7 @@ function LineChart() {
         <>
             <div className="pb-6 relative h-[370px] w-full">
                 <div className="absolute w-full h-full">
-                <Line data={lineChart} options={options} />
+                    <Line data={lineChart} options={options} />
                 </div>
             </div>
         </>

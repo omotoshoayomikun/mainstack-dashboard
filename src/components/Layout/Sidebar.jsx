@@ -13,8 +13,6 @@ function Sidebar() {
     useEffect(() => {
         setUrl(window.location.href)
     }, [])
-    
-    console.log(url.split('/').pop())
 
     return (
         <>

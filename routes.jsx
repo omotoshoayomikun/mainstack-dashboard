@@ -12,47 +12,47 @@ export const routes = [
     {
         icon: <DashboardIcon />,
         title: 'Dashboard',
-        link: '#',
+        link: '',
     },
     {
         icon: <PenIcon />,
         title: 'Item 1',
-        link: '#',
+        link: 'item-1',
     },
     {
         icon: <UsersIcon />,
         title: 'Item 2',
-        link: '#',
+        link: 'item-2',
     },
     {
         icon: <HourglassIcon />,
         title: 'Item 3',
-        link: '#',
+        link: 'item-3',
     },
     {
         icon: <CameraIcon />,
         title: 'Item 4',
-        link: '#',
+        link: 'item-4',
     },
     {
         icon: <TrashIcon />,
         title: 'Item 5',
-        link: '#',
+        link: 'item-5',
     },
     {
         icon: <SubscribeIcon />,
         title: 'Item 6',
-        link: '#',
+        link: 'item-6',
     },
     {
         icon: <FileIcon />,
         title: 'Item 7',
-        link: '#',
+        link: 'item-7',
     },
     {
         icon: <ClockIcon />,
         title: 'Item 8',
-        link: '#',
+        link: 'item-8',
     },
 
 ]

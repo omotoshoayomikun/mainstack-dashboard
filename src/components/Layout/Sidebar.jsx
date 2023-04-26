@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { routes } from '../../../routes';
 
 import { ReactComponent as MoreIcon } from '../../assets/icons/more.svg'
 
 
+
 function Sidebar() {
+
+    const [url, setUrl] = useState('')
+
+
+    useEffect(() => {
+        setUrl(window.location.href)
+    }, [])
+    
+    console.log(url.split('/').pop())
+
     return (
         <>
             <div className='w-[304px] h-full pb-[60px] pt-[20px] relative'>
@@ -16,7 +27,7 @@ function Sidebar() {
                 <div>
                     {
                         routes.map((route, i) => (
-                            <a href={route.link} key={i} className='flex items-center mb-[24px] pl-[60px] my-list my-active relative'>
+                            <a href={route.link} key={i} className={`flex items-center mb-[24px] pl-[60px] my-list relative ${url.split('/').pop() == route.link && `my-active`}`}>
                                 <div className='w-[20px] h-[20px] flex items-center content-center py-[2px] list-icon'>{route.icon} </div>
                                 <span className='text-base ml-[12px] list-title'>{route.title}</span>
                             </a>
@@ -25,7 +36,7 @@ function Sidebar() {
                     <div className='text-my-text-color text-[12px] ml-[60px] mt-[8px] mb-[20px]' style={{ fontFamily: 'sohne-extra' }}>OTHERS 1</div>
                     {
                         routes.map((route, i) => (
-                            <a href={route.link} key={i} className='flex items-center mb-[24px] pl-[60px] my-list my-active relative'>
+                            <a href={route.link} key={i} className={`flex items-center mb-[24px] pl-[60px] my-list relative  ${url.split('/').pop() == route.link && `my-active`}`}>
                                 <div className='w-[20px] h-[20px] flex items-center content-center py-[2px] list-icon'>{route.icon} </div>
                                 <span className='text-base ml-[12px] list-title'>{route.title}</span>
                             </a>
@@ -34,7 +45,7 @@ function Sidebar() {
                     <div className='text-my-text-color text-[12px] ml-[60px] mt-[8px] mb-[20px]' style={{ fontFamily: 'sohne-extra' }}>OTHERS 2</div>
                     {
                         routes.map((route, i) => (
-                            <a href={route.link} key={i} className='flex items-center mb-[24px] pl-[60px] my-list my-active relative'>
+                            <a href={route.link} key={i} className={`flex items-center mb-[24px] pl-[60px] my-list relative  ${url.split('/').pop() == route.link && `my-active`}`}>
                                 <div className='w-[20px] h-[20px] flex items-center content-center py-[2px] list-icon'>{route.icon} </div>
                                 <span className='text-base ml-[12px] list-title'>{route.title}</span>
                             </a>

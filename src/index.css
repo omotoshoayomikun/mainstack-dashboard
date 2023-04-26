@@ -34,22 +34,29 @@ body {
   color: #4D5760;
   transition: all 0.5s ;
 }
-/* 
-.my-list.my-active {
-  padding-left: 62px;
-  fill: #FF5403;
-  color: #FF5403;
-} */
+
 
 .my-list::before {
   content: '';
   position: absolute;
-  width: 2px;
+  width: 3px;
   left: 0;
   top: 0;
   height: 28px;
   transition: all 1s ;
 }
+
+.my-list.my-active {
+  padding-left: 62px;
+  fill: #FF5403;
+  color: #FF5403;
+}
+
+.my-active.my-list::before {
+  background: #FF5403;
+  border-radius: 3px;
+}
+
 
 .my-list:hover {
   padding-left: 62px;

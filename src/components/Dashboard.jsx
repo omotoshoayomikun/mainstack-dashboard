@@ -5,6 +5,8 @@ import axios from 'axios';
 import LineChart from './Forms/LineChart';
 import { ReactComponent as InfoIcon } from '../assets/icons/info.svg';
 
+import styles from '../styles/Dashboard.module.css'
+
 function Dashboard() {
 
     const [datas, setDatas] = useState([])
@@ -34,11 +36,9 @@ function Dashboard() {
     }, [])
 
 
-    console.log(totalPage)
-
     return (
         <>
-            <div className="px-[60px] pt-[22px] pb-[44px]">
+            <div className={styles.container}>
                 <h2 className='text-xl font-bold mb-[46px]'>Dashboard</h2>
                 <div className="flex justify-between items-center mb-[23px]">
                     <div>
@@ -50,7 +50,7 @@ function Dashboard() {
                     </div>
                 </div>
                 {/* BADGES */}
-                <div className="flex mb-6">
+                <div className="flex mb-6 overflow-x-auto">
                     <div className="text-sm py-3 px-4 border border-solid border-my-grey border-radius rounded-[100px] text-my-black mr-3">1 Day</div>
                     <div className="text-sm py-3 px-4 border border-solid border-my-grey border-radius rounded-[100px] text-my-black mr-3">3 Days</div>
                     <div className="text-sm py-3 px-4 border border-solid border-my-grey border-radius rounded-[100px] text-my-black mr-3">7 Days</div>
@@ -79,7 +79,7 @@ function Dashboard() {
                     <LineChart />
                 </div>
 
-                <div className="flex gap-4">
+                <div className={styles.das_flex}>
                     <div className="basis-full">
                         <Card {...datas.top_locations} title='Top Locations' color={colors} />
                     </div>

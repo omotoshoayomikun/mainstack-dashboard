@@ -18,7 +18,7 @@ function Sidebar() {
         <>
             <div className='w-[304px] h-full pb-[60px] pt-[20px] relative'>
                 {/* LOGO */}
-                <div className='mb-[35px] pl-[60px]'>
+                <div className='mb-[35px] pl-[60px] mid'>
                     <img src="/imgs/logo.png" alt="" />
                 </div>
                 {/* LINK LIST */}
@@ -52,7 +52,7 @@ function Sidebar() {
                 </div>
 
                 {/* SIDE FOOTER */}
-                <div className="absolute w-full flex justify-between items-center pl-[60px] pr-[16px] left-0 bottom-7">
+                <div className="absolute flex justify-between items-center  left-0 bottom-7 w-[89%] pl-[45px] pr-[16px]">
 
                     <div className='flex items-center'>
                         <img src="/imgs/1.png" alt="image 1" className='rounded-full' />

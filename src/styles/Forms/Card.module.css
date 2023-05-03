@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 924px) {
+    /* .card {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-direction: column;
+    } */
+}

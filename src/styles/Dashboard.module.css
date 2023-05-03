@@ -1,0 +1,23 @@
+.container {
+    padding: 22px 60px 44px;
+}
+
+.das_flex {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+@media screen and (max-width: 1234px) {
+    .container {
+        padding: 22px 30px 44px;
+    }
+}
+
+@media screen and (max-width: 924px) {
+    .das_flex {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

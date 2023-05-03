@@ -18,9 +18,8 @@
   }
 }
 
-:root {
+:root {}
 
-}
 * {
   box-sizing: border-box;
 }
@@ -32,7 +31,7 @@ body {
 .my-list {
   fill: #4D5760;
   color: #4D5760;
-  transition: all 0.5s ;
+  transition: all 0.5s;
 }
 
 
@@ -43,7 +42,7 @@ body {
   left: 0;
   top: 0;
   height: 28px;
-  transition: all 1s ;
+  transition: all 1s;
 }
 
 .my-list.my-active {
@@ -67,4 +66,62 @@ body {
 .my-list:hover.my-list::before {
   background: #FF5403;
   border-radius: 3px;
+}
+
+.mid {
+  display: block;
+}
+
+@media screen and (max-width: 1234px) {
+  .mid {
+    display: none;
+  }
+}
+
+.menu_btn__burger {
+  position: absolute;
+  right: 0;
+  top: 14px;
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn__burger::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  position: absolute;
+  top: -8px;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn__burger::after {
+  content: "";
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: 8px;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn__burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+
+.menu_btn__burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+
+.menu_btn__burger.open::after {
+  width: 28px;
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.trans {
+  transition: all 0.5s ease-in-out;
 }

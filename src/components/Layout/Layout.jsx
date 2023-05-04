@@ -14,7 +14,7 @@ function Layout({ children }) {
   const barBoolean = useSelector(state => state.slide.bar)
 
   const handleOverlay = () => {
-    dispatch(handleSlide(false))
+    dispatch(handleSlide(true))
   }
 
 
